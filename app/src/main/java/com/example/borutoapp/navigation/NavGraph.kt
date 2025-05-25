@@ -6,7 +6,7 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
-import com.example.borutoapp.utils.Constants.DETAILS_ARGUMENT_ID
+import com.example.borutoapp.utils.Constants.DETAILS_ARGUMENT_KEY
 
 @Composable
 fun SetUpNavGraph(navController: NavHostController) {
@@ -25,7 +25,7 @@ fun SetUpNavGraph(navController: NavHostController) {
         }
         composable(
             route = Screen.Details.route,
-            arguments = listOf(navArgument(name = DETAILS_ARGUMENT_ID) {
+            arguments = listOf(navArgument(name = DETAILS_ARGUMENT_KEY) {
                 type = NavType.IntType
             })
         ) {
