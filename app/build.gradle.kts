@@ -57,6 +57,7 @@ dependencies {
     implementation(libs.retrofit)
     implementation(libs.retrofit.converter.gson)       // optional
     implementation(libs.retrofit.converter.moshi)      // optional
+    implementation(libs.retrofit2.kotlinx.serialization.converter)
 
     // ── Paging ───────────────────────────────────────────────
     implementation(libs.paging.runtime.ktx)
@@ -84,6 +85,7 @@ dependencies {
 
     // Hilt
     implementation(libs.hilt.android)
+    implementation(libs.androidx.hilt.navigation.compose)
     ksp(libs.dagger.hilt.android.compiler)
 
     // Accompanist

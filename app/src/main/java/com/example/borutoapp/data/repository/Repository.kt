@@ -1,4 +1,4 @@
-package com.example.borutoapp.data.pref
+package com.example.borutoapp.data.repository
 
 import com.example.borutoapp.domain.manager.LocalManager
 import jakarta.inject.Inject

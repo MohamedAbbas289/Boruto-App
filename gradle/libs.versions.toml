@@ -12,6 +12,7 @@ composeBom = "2024.04.01"
 ksp = "2.0.0-1.0.21"
 retrofit = "3.0.0"
 paging = "3.3.6"
+retrofit2KotlinxSerializationConverter = "1.0.0"
 serialization = "1.8.1"
 datastore = "1.1.7"
 hilt = "2.56.2"
@@ -20,6 +21,7 @@ room = "2.7.1"
 navigationCompose = "2.9.0"
 accompanist = "0.37.3"   # latest (Apr 2025) :contentReference[oaicite:0]{index=0}
 palette = "1.0.0"    # only stable release :contentReference[oaicite:1]{index=1}
+hiltNavigationCompose = "1.2.0"
 
 
 [libraries]
@@ -51,6 +53,7 @@ room-paging = { module = "androidx.room:room-paging", version.ref = "room" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 retrofit-converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
 retrofit-converter-moshi = { module = "com.squareup.retrofit2:converter-moshi", version.ref = "retrofit" }
+retrofit2-kotlinx-serialization-converter = { module = "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter", version.ref = "retrofit2KotlinxSerializationConverter" }
 
 # Paging
 paging-runtime-ktx = { module = "androidx.paging:paging-runtime-ktx", version.ref = "paging" }
@@ -66,6 +69,9 @@ androidx-datastore-preferences = { module = "androidx.datastore:datastore-prefer
 # Dagger-Hilt
 dagger-hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hilt" }
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
+
+# Hilt Navigation
+androidx-hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hiltNavigationCompose" }
 
 # Coil 3
 coil = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coil" }

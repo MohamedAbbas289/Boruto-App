@@ -2,7 +2,11 @@ package com.example.borutoapp.di
 
 import android.content.Context
 import com.example.borutoapp.data.manager.LocalManagerImpl
+import com.example.borutoapp.data.repository.Repository
 import com.example.borutoapp.domain.manager.LocalManager
+import com.example.borutoapp.domain.use_cases.UseCases
+import com.example.borutoapp.domain.use_cases.read_onBoarding.ReadOnBoardingUseCase
+import com.example.borutoapp.domain.use_cases.save_onBoarding.SaveOnBoardingUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -21,13 +25,12 @@ object RepositoryModule {
         return LocalManagerImpl(context)
     }
 
-//    @Provides
-//    @Singleton
-//    // one function that passes the repo to all use cases we have
-//    fun provideUseCases(repo: Repository): UseCases{
-//        return UseCases(
-//            saveOnBoardingUseCase = SaveOnBoardingUseCase(repo),
-//            readOnBoardingUseCase = ReadOnBoardingUseCase(repo)
-//        )
-//    }
+    @Provides
+    @Singleton
+    fun provideUseCases(repo: Repository): UseCases {
+        return UseCases(
+            saveOnBoardingUseCase = SaveOnBoardingUseCase(repo),
+            readOnBoardingUseCase = ReadOnBoardingUseCase(repo)
+        )
+    }
 }

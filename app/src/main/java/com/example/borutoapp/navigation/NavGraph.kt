@@ -2,27 +2,35 @@ package com.example.borutoapp.navigation
 
 import WelcomeScreen
 import androidx.compose.runtime.Composable
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
+import com.example.borutoapp.presentation.screens.home.HomeScreen
+import com.example.borutoapp.presentation.screens.welcome.WelcomeViewModel
 import com.example.borutoapp.utils.Constants.DETAILS_ARGUMENT_KEY
 
 @Composable
-fun SetUpNavGraph(navController: NavHostController) {
+fun SetUpNavGraph(
+    navController: NavHostController,
+    startDestination: String
+) {
+    val welcomeViewModel: WelcomeViewModel = hiltViewModel()
     NavHost(
         navController = navController,
-        startDestination = Screen.Welcome.route
+        startDestination = startDestination
     ) {
-        composable(route = Screen.Splash.route) {
-
-        }
         composable(route = Screen.Welcome.route) {
-            WelcomeScreen(onFinishButtonClick = { })
+            WelcomeScreen(onFinishButtonClick = {
+                welcomeViewModel.saveOnBoardingState(complete = true)
+                navController.popBackStack()
+                navController.navigate(Screen.Home.route)
+            })
         }
         composable(route = Screen.Home.route) {
-
+            HomeScreen()
         }
         composable(
             route = Screen.Details.route,

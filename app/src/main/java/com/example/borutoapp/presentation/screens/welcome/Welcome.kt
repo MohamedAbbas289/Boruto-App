@@ -23,9 +23,11 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.borutoapp.R
 import com.example.borutoapp.domain.model.OnBoardingPage
 import com.example.borutoapp.presentation.screens.welcome.HorizontalPagerIndicator
+import com.example.borutoapp.presentation.screens.welcome.WelcomeViewModel
 import com.example.borutoapp.ui.theme.EXTRA_LARGE_PADDING
 import com.example.borutoapp.ui.theme.PAGING_INDICATOR_SPACING
 import com.example.borutoapp.ui.theme.PAGING_INDICATOR_WIDTH
@@ -41,7 +43,8 @@ import com.example.borutoapp.utils.Constants.ON_BOARDING_PAGE_COUNT
 
 @Composable
 fun WelcomeScreen(
-    onFinishButtonClick: () -> Unit
+    onFinishButtonClick: () -> Unit,
+    welcomeViewModel: WelcomeViewModel = hiltViewModel()
 ) {
     val pages = listOf(
         OnBoardingPage.First,
