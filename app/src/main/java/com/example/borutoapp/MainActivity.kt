@@ -14,6 +14,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.borutoapp.domain.use_cases.UseCases
 import com.example.borutoapp.navigation.Screen
 import com.example.borutoapp.navigation.SetUpNavGraph
+import com.example.borutoapp.ui.theme.BorutoAppTheme
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -38,12 +39,14 @@ class MainActivity : ComponentActivity() {
             )
         )
         setContent {
-            navController = rememberNavController()
-            SetUpNavGraph(
-                navController = navController,
-                startDestination = if (completed.value) Screen.Home.route
-                else Screen.Welcome.route
-            )
+            BorutoAppTheme {
+                navController = rememberNavController()
+                SetUpNavGraph(
+                    navController = navController,
+                    startDestination = if (completed.value) Screen.Home.route
+                    else Screen.Welcome.route
+                )
+            }
         }
     }
 
