@@ -42,6 +42,7 @@ import com.example.borutoapp.R
 import com.example.borutoapp.domain.model.Hero
 import com.example.borutoapp.navigation.Screen
 import com.example.borutoapp.presentation.components.RatingWidget
+import com.example.borutoapp.presentation.components.ShimmerEffect
 import com.example.borutoapp.ui.theme.HERO_ITEM_HEIGHT
 import com.example.borutoapp.ui.theme.LARGE_PADDING
 import com.example.borutoapp.ui.theme.MEDIUM_PADDING
@@ -95,12 +96,12 @@ fun handlePagingResult(
 
         return when {
             loadState.refresh is LoadState.Loading -> {
-//                ShimmerEffect()
+                ShimmerEffect()
                 false
             }
 
             error != null -> {
-//                EmptyScreen(error = error, heroes = heroes)
+                EmptyScreen(error = error)
                 false
             }
 
