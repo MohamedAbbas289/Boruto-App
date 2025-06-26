@@ -2,6 +2,7 @@ package com.example.borutoapp.presentation.common
 
 //import androidx.compose.material3.pulltorefresh.PullToRefreshBox
 import android.content.res.Configuration.UI_MODE_NIGHT_YES
+import android.util.Log
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.isSystemInDarkTheme
@@ -148,6 +149,7 @@ fun parseErrorMessage(error: LoadState.Error): String {
         }
 
         is ConnectException -> {
+            Log.d("Error", error.toString())
             "Internet Unavailable."
         }
 
